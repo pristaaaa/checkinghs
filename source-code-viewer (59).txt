@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/p2p-engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/clappr-p2p-plugin.min.js"></script>
+    <script src="https://streamtp.live/block.js"></script>
+    <script type="text/javascript">aclib.runPop({zoneId: '7440630',});</script>
+    <script id="aclib" type="text/javascript" src="https://alwaysdomain01.online/ads/lib7.js"></script>
+<style>body, html {margin: 0;padding: 0;width: 100%;height: 100%;overflow: hidden;}#player {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}</style>
+</head>
+<body>
+<div id="player"></div>
+<script>
+    var playbackURL = "https://814.pricesaskeloadsc.com:443/eventos/index.m3u8?token=bca69439f226cb3d9577dcd23f13ed8a9648a619-5a-1716403784-1716392984";
+    var p2pConfig = {
+        trackerZone: 'us',      
+        waitForPeer: true,
+        waitForPeerTimeout: 2.0,
+        sourceUrl: playbackURL
+    };
+    var player = new Clappr.Player({
+        source: playbackURL,
+        parentId: "#player",
+        poster: '',
+        width: '100%',
+        height: '100%',
+        autoPlay: false,
+        plugins: [SwarmCloudClapprPlugin],
+        playback: {
+            hlsjsConfig: {
+                maxBufferSize: 0,     
+                maxBufferLength: 12,   
+                liveSyncDurationCount: 4,  
+                p2pConfig: p2pConfig
+            }
+        }
+    });
+</script>
+</body>
+</html>
